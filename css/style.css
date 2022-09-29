@@ -19,6 +19,7 @@
 /* Layouts */
 
 header{
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,20 +37,22 @@ header .col:first-child{
 }
 
 header .col:nth-child(2){
-    width: calc(100% - 169px - 188px);
-    background-color: blue;
+    width: calc(100% - 169px - 195px);
+    background-color: #111;
 }
 
 header .col:last-child{
-    width: 188px;
+    width: 195px;
     background-color: #111;
     text-align: right;
     padding-right: 38px;
-    padding-top: 20px;
 }
 
 header .col:last-child>div{
     display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Right block */
@@ -62,7 +65,10 @@ header .col:last-child>div{
     font-weight: bold;
     cursor: pointer;
     background: linear-gradient(135deg, rgb(255, 51, 66) 0%, rgb(255, 48, 64) 0.01%, rgb(255, 125, 102) 100%);
-    transition: background 50ms;
+    transition: 20ms;
+    line-height: 16px;
+    letter-spacing: .08em;
+    vertical-align: bottom;
 }
 
 #btn-playnow:hover{
@@ -72,21 +78,50 @@ header .col:last-child>div{
 #ico-world{
     width: 32px;
     height: 32px;
-    margin-right: 6px;
+    margin-right: 1px;
     text-align: center;
     border-radius: 6.4px;
     cursor: pointer;
+    line-height: 32px;
+    font-size: 1.2rem;
 }
 
 #ico-world:hover{
     background-color: rgba(128,128,128,0.2);
 }
 
-#ico-world ion-icon{
-    color: white;
-    padding-top: 5px;
-    vertical-align: middle;
-    font-size: 1.2rem;
+#nav-main{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
+
+#nav-main li{
+    color: #f9f9f9;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: .08em;
+    border-radius: 6.4px;
+    line-height: 15.6px;
+}
+
+#nav-main li:hover{
+    background-color: rgba(128,128,128,0.3);
+}
+
+#nav-main > li{
+    float: left;
+    padding: 7.5px 16px;
+    margin-right: 4px;
+}
+
+#nav-main .submenu > nav{
+    display: none;
+}
+
+#nav-main .submenu:hover svg path{
+    fill: white;
+}
 
