@@ -32,12 +32,13 @@ header .col{
 }
 
 header .col:first-child{
-    width: 169px;
-    background-color: red;
+    padding-left: 36px;
+    width: 200px;
+    background-color: #111;
 }
 
 header .col:nth-child(2){
-    width: calc(100% - 169px - 195px);
+    width: calc(100% - 200px - 195px);
     background-color: #111;
 }
 
@@ -91,29 +92,59 @@ header .col:last-child>div{
 }
 
 #nav-main{
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
 }
 
 
 #nav-main li{
-    color: #f9f9f9;
+    /* color: #f9f9f9; */
     cursor: pointer;
     font-weight: bold;
     font-size: 13px;
     letter-spacing: .08em;
     border-radius: 6.4px;
     line-height: 15.6px;
+    height: 100%;
 }
 
-#nav-main li:hover{
+#nav-main>li a{
+    border-radius: 6.4px;
+    line-height: 15.6px;
+    text-decoration: none;
+    color: white;
+}
+
+#nav-main>li>a{
+    display: block;
+    padding: 7.5px 16px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#nav-main>li:not(.submenu):hover a::after{
+    display: block;
+}
+
+#nav-main>li:not(.submenu) a::after{
+    display: none;
+    content: "";
+    position: absolute;
+    /* background-color: red; */
+    width: 100%;
+    left: 0;
+    top: 44px;
+    height: 4px;
+    background-color: rgb(255, 70, 85);
+    border-radius: 2px 2px 0px 0px;
+}
+
+#nav-main li:hover>a{
     background-color: rgba(128,128,128,0.3);
 }
 
 #nav-main > li{
     float: left;
-    padding: 7.5px 16px;
     margin-right: 4px;
 }
 
@@ -123,5 +154,90 @@ header .col:last-child>div{
 
 #nav-main .submenu:hover svg path{
     fill: white;
+}
+
+#nav-main>li.submenu{
+    position: relative;
+}
+
+#nav-main>li.submenu li{
+    padding: 5px 16px 0;
+}
+
+#nav-main>li.submenu li:first-child{
+    padding-top: 16px;
+}
+
+#nav-main>li.submenu li:last-child{
+    padding-bottom: 16px;
+}
+
+#nav-main>li.submenu nav a{
+    display: block;
+    padding: 16px 8px;
+    font-weight: 500;
+}
+
+#nav-main .submenu nav{
+    position: absolute;
+    width: 205px; 
+    background-color: #292929;
+    top: 69px;
+}
+
+#nav-main .submenu nav::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 4px;
+    background-color: rgb(255, 70, 85);
+    border-radius: 2px 2px 0px 0px;
+}
+
+#nav-main .submenu:hover nav{
+    display: block;
+}
+
+#riot-games{
+    float: left;
+    background-color: #111;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#riot-games:hover svg{
+    fill: #eb0029 !important;
+}
+
+#riot-games svg:first-child{
+    fill: #f9f9f9;
+}
+
+#riot-games svg:last-child{
+    line-height: 27px;
+    vertical-align: super;
+    fill: #7b7b7b;
+}
+
+#logo{
+    height: 100%;
+    padding-left: 22px;
+    float: left;
+    background-color: #111;
+}
+
+#logo a{
+    position: relative;
+    top: 50%;
+    display: block;
+    transform: translateY(-50%);
+}
+
+#logo svg{
+    height: 26px;
 }
 
